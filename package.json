@@ -1,0 +1,22 @@
+{
+  "name": "mongodb_netninja",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fredlazo/mongodb_netninja.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fredlazo/mongodb_netninja/issues"
+  },
+  "homepage": "https://github.com/fredlazo/mongodb_netninja#readme",
+  "dependencies": {
+    "mongoose": "^4.8.5"
+  }
+}
