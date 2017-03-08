@@ -29,3 +29,12 @@ mongoose.connection.once('open', function(){
 });
 
 });
+
+
+// Drop the characters collection before each testaroo
+beforeEach(function(done){
+    //Drop the collection
+    mongoose.connection.collections.mariochars.drop(function(){
+        done();
+    });
+});
