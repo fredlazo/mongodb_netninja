@@ -7,13 +7,22 @@ const MarioChar = require('../models/mariochar');
 
 describe('Saving records', function(){
     // Create tests
-    it('Saves a record to the database', function(){
+    it('Saves a record to the database', function(done){
             var char = new MarioChar({
                 name: 'Mario',
-                weight: '500'
+                weight: 45
             });
-            char.save().then(function(done){
+            //PROMISE that after it's SAVED,
+            //THEN it will run the function.  because
+            //it is ASYNCHRONOUS, meaning it will happen
+            //later because it's slow.
+            char.save().then(function(){
+                //True if not saved
+                //It's old, it's already been saved.
+
                 assert(char.isNew === false);
+                //Mocha doesn't know when char has been saved.
+                //Okay, the test is DONE.  Move to the next test.
                 done();
             });
     });
