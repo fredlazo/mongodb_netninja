@@ -8,7 +8,8 @@ const MarioCharSchema = new Schema({
     weight: Number
 });
 
-//'mariochar' is a collection
+//'mariochar' is a collection of 'mariochars'
+// using the 'MarioChar' model.
 const MarioChar = mongoose.model('mariochar', MarioCharSchema);
 
 module.exports = MarioChar;
