@@ -29,10 +29,12 @@ describe('Deleting records', function(){
 
     // Create tests
     it('Deletes one record from the database', function(done){
-        //.then fires after it finds something.
+        //.then fires after it deletes something.
         MarioChar.findOneAndRemove({name: 'Mario'}).then(function(){
+            //Tries to find what you deleted
             MarioChar.findOne({name: 'Mario'}).then(function(result){
                 assert(result === null);
+                //Ends the test.  Move to the next test
                 done();
             });
         });
