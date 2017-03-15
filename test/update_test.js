@@ -18,7 +18,7 @@ describe('Updating records', function(){
         //This var char is no longer declared here...
         char = new MarioChar({
             name: 'Mario',
-            weight: '500'
+            weight: '50'
             //mongoose automatically creates an ID
         });
         char.save().then(function(){
@@ -39,4 +39,17 @@ describe('Updating records', function(){
             });
         });
     });
+
+
+        it('Increment weight by one', function(done){
+            MarioChar.update({}, {$inc: {weight: 1}}).then(function(){
+                MarioChar.findOne({name: 'Mario'}).then(function(record){
+                    assert(record.weight === 51);
+                    done();
+                });
+            });
+        });
+
+
+
 });
